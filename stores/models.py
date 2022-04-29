@@ -10,8 +10,13 @@ class Pizzeria(models.Model):
     state           = models.CharField(max_length=2, null=True, blank=True)
     zip_code        = models.IntegerField(blank=True, default=0)
     website         = models.URLField(max_length=420, blank=True)
-    phone_number    = models.CharField(validators=[RegexValidator(regex=r'^\1?\d{9,10}$')], max_length=10, blank=True)
+    phone_number    = models.CharField(validators=[RegexValidator(regex=r'^1?\d{9,10}$')], max_length=10, blank=True)
     description     = models.TextField(blank=True)
     logo_image      = models.ImageField(upload_to='pizzariaImages', blank=True, default='pizzariaImages/pizzalogo.png')
     email           = models.EmailField(max_length=200, blank=True)
     active          = models.BooleanField(default=True)
+
+
+    def __str__(self):
+        return '%s %s' % (self.pizzeria_name, self.city)
+ 
