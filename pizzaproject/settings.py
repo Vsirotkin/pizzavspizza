@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # added
     'rest_framework',
     'corsheaders',
+
+    # own
+    'stores.apps.StoresConfig',
 ]
 
 MIDDLEWARE = [
