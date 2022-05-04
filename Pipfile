@@ -4,12 +4,26 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+<<<<<<< HEAD
 django = "*"
 djangorestframework = "*"
 markdown = "*"
 django-cors-headers = "*"
+=======
+django = "4.0.4"
+install = "*"
+django-cors-headers = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+pipenv = "*"
+tools = "*"
+pip-tools = "*"
+psycopg2-binary = "*"
+pillow = "*"
+>>>>>>> stores_app
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.8"
