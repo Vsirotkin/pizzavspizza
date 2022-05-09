@@ -20,6 +20,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
 
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
     update = serializers.SerializerMethodField()
+    delete = serializers.SerializerMethodField()
     class Meta:
         model = Pizzeria
         fields = [
@@ -35,7 +36,11 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'email',
             'active',
             'update',
+            'delete',
         ]
 
     def get_update(self, obj):
         return reverse('pizzeria_update', args=(obj.pk,))
+    
+    def get_delete(self, obj):
+        return reverse('pizzeria_delete', args=(obj.pk,))
